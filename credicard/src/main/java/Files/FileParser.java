@@ -55,7 +55,7 @@ public abstract class FileParser {
 			}
 			else if(outputFileName.endsWith(".csv")) {
 				for (ProcessedCreditCard cd: cards) {
-					bw.write(cd.getCardNumber() + ',' + cd.getCardType() + ',' + cd.getIsValid());
+					bw.write(cd.getCardNumber() + ',' + cd.getCardType() + ',' + cd.getIsValid() + ',' + cd.getError());
 					bw.newLine();
 				}
 			}

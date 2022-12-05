@@ -21,7 +21,7 @@ public class CreditCardValidate {
 	public static boolean validCC(String number) throws Exception {
 		int CardID;
 		if ((CardID = getCardID(number)) != -1)
-			return validCCNumber(number);
+			return true;
 		return false;
 	}
 	
@@ -64,7 +64,7 @@ public class CreditCardValidate {
 					valid = AMERICAN_EXPRESS;
 			}
 		}
-		
+		System.out.println("VALID: "+valid);
 		return valid;
 	}
 	
@@ -127,8 +127,6 @@ public class CreditCardValidate {
 		int cardType = getCardID(aCard);
 		CreditCard card = null;
 		
-		System.out.println("Card type :"+cardType);
-		
 		CardFactory cardFactory = new CardFactory();
 		
 		ProcessedCreditCard pcc = new ProcessedCreditCard();
@@ -138,13 +136,16 @@ public class CreditCardValidate {
 		if ((validCC(aCard))) {
 			card = cardFactory.getCard(cardType, aCard);
 			pcc.setIsValid(true);
+			pcc.setError("Valid Card");
 			System.out.println("This is a " + getCardName(cardType) + " card. " + card.toString());
 		} 
 		else {
 			pcc.setIsValid(false);
+			pcc.setError("Invalid Card");
 			System.out.println("This card is invalid or unsupported!");
 		}
 		
+		System.out.println("\n");
 		return pcc;
 	}
 }

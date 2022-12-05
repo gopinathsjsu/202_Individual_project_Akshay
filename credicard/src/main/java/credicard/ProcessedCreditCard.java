@@ -4,6 +4,8 @@ public class ProcessedCreditCard {
 	private String cardNumber;
 	private String cardType;
 	private boolean isValid;
+	private String error;
+	
 	public String getCardNumber() { 
 		return cardNumber;
 	}
@@ -21,6 +23,13 @@ public class ProcessedCreditCard {
 	}
 	public void setIsValid(boolean isValid) {
 		this.isValid = isValid;
+	}
+	
+	public String getError() {
+		return error;
+	}
+	public void setError(String error) {
+		this.error = error;
 	}
 	@Override
 	public String toString() {
