@@ -1,0 +1,7 @@
+credicard\CreditCard.class
+credicard\VisaCard.class
+credicard\CardFactory.class
+credicard\AmexCard.class
+credicard\DiscoverCard.class
+credicard\MasterCard.class
+credicard\CreditCardValidation.class
